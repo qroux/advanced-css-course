@@ -20,4 +20,33 @@
     color: rgb(0, 0, 0);
     background-color: $white;
   }
+  &--green {
+    color: rgb(255, 255, 255);
+    background-color: $color-primary-dark;
+  }
+}
+
+.btn-text {
+  &:link,
+  &:visited {
+    font-size: $default-fsize;
+    color: $color-primary-dark;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid $color-primary-dark;
+    padding: 1rem;
+    transition: all 0.3s;
+  }
+
+  &:hover {
+    background-color: $color-primary-dark;
+    color: white;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+    transform: translateY(0);
+  }
 }

@@ -24,5 +24,20 @@ body {
 
   &:hover {
     transform: skew(2deg, 2deg);
+    text-shadow: 0.5rem 1rem 2rem rgba(black, 0.4);
+  }
+}
+
+.heading-tertiary {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.paragraph {
+  font-size: 1.6rem;
+
+  &:not(:last-child) {
+    margin-bottom: 3rem;
   }
 }
