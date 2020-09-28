@@ -17,7 +17,7 @@
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4);
   }
   &--white {
-    color: rgb(0, 0, 0);
+    color: $bg-dark-gray;
     background-color: $white;
   }
   &--green {
