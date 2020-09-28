@@ -30,6 +30,7 @@
   &:link,
   &:visited {
     font-size: $default-fsize;
+    font-weight: 700;
     color: $color-primary-dark;
     display: inline-block;
     text-decoration: none;

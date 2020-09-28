@@ -1,0 +1,43 @@
+.form {
+  &__group:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  &__input {
+    font-family: inherit;
+    font-size: 1.5rem;
+    color: inherit;
+    padding: 1.5rem 2rem;
+    border-radius: 3px;
+    background-color: rgba(white, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid rgba(0, 0, 0, 0);
+    width: 90%;
+    display: block;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+      border-bottom: 3px solid $color-primary-dark;
+
+      &:invalid {
+        border-bottom: 3px solid $yellow-dark;
+      }
+
+      &:valid {
+        border-bottom: 3px solid $color-primary-dark;
+      }
+    }
+
+    &::-webkit-input-placeholder {
+      color: #999;
+    }
+
+    &:focus:invalid {
+      border-bottom: 3px solid $yellow-dark;
+    }
+  }
+
+  &__label {
+  }
+}
