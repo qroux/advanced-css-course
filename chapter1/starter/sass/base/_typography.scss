@@ -3,7 +3,36 @@ body {
   font-size: 1.6rem;
   line-height: 1.7;
   color: $bg-dark-gray;
-  padding: 0;
+}
+
+.heading-primary {
+  color: $white;
+  text-transform: uppercase;
+  margin-bottom: 6rem;
+
+  &--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 700;
+    letter-spacing: 3.5rem;
+    animation: moveInLeft 1s ease-out;
+
+    @include respond(phone) {
+      font-size: 5rem;
+      letter-spacing: 1rem;
+    }
+  }
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.76rem;
+    animation: moveInRight 1s ease-out;
+
+    @include respond(phone) {
+      letter-spacing: 0.5rem;
+    }
+  }
 }
 
 .heading-secondary {
@@ -21,6 +50,13 @@ body {
   );
   letter-spacing: 0.2rem;
   transition: all 0.2s;
+
+  @include respond(tab-port) {
+    font-size: 3rem;
+  }
+  @include respond(phone) {
+    font-size: 2.5rem;
+  }
 
   &:hover {
     transform: skew(2deg, 2deg);

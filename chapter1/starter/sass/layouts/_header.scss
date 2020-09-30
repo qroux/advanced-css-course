@@ -12,6 +12,15 @@
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   position: relative;
 
+  @include respond(tab-port) {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  }
+  @include respond(phone) {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 90vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 90vh, 0 100%);
+  }
+
   &__logo-box {
     position: absolute;
     top: 4rem;
@@ -28,26 +37,5 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-  }
-}
-
-.heading-primary {
-  color: $white;
-  text-transform: uppercase;
-  margin-bottom: 6rem;
-
-  &--main {
-    display: block;
-    font-size: 6rem;
-    font-weight: 700;
-    letter-spacing: 3.5rem;
-    animation: moveInLeft 1s ease-out;
-  }
-  &--sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.76rem;
-    animation: moveInRight 1s ease-out;
   }
 }
