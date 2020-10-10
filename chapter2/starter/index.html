@@ -55,8 +55,89 @@
         </nav>
       </header>
       <div class="content">
-        <nav class="sidebar">sidebar</nav>
-        <main class="hotel-view">hotel-view</main>
+        <nav class="sidebar">
+          <ul class="side-nav">
+            <li class="side-nav__item">
+              <a href="#" class="side-nav__link">
+                <svg class="side-nav__icon">
+                  <use xlink:href="img/sprite.svg#icon-home" />
+                </svg>
+                <span>Hotel</span>
+              </a>
+            </li>
+            <li class="side-nav__item">
+              <a href="#" class="side-nav__link">
+                <svg class="side-nav__icon">
+                  <use xlink:href="img/sprite.svg#icon-aircraft-take-off" />
+                </svg>
+                <span>Flights</span>
+              </a>
+            </li>
+            <li class="side-nav__item">
+              <a href="#" class="side-nav__link">
+                <svg class="side-nav__icon">
+                  <use xlink:href="img/sprite.svg#icon-key" />
+                </svg>
+                <span>Car rental</span>
+              </a>
+            </li>
+            <li class="side-nav__item">
+              <a href="#" class="side-nav__link">
+                <svg class="side-nav__icon">
+                  <use xlink:href="img/sprite.svg#icon-map" />
+                </svg>
+                <span>Tours</span>
+              </a>
+            </li>
+          </ul>
+          <div class="legal">
+            &copy; Trillo. Done for <a href="https://www.udemy.com/course/advanced-css-and-sass/" target="_blank"> Advanced Css and Sass Course</a>
+            <br /> Credits - Jonas Schmedtmann
+          </div>
+        </nav>
+        <main class="hotel-view">
+          <div class="gallery">
+            <figure class="gallery__item">
+              <img src="img/hotel-1.jpg" alt="Hotel 1" class="gallery__photo">
+            </figure>
+            <figure class="gallery__item">
+              <img src="img/hotel-2.jpg" alt="Hotel 1" class="gallery__photo">
+            </figure>
+            <figure class="gallery__item">
+              <img src="img/hotel-3.jpg" alt="Hotel 1" class="gallery__photo">
+            </figure>
+          </div>
+          <div class="overview">
+            <h1 class="overview__heading">Las Palmas Hotel</h1>
+            <div class="overview__stars">
+              <svg class="overview__icon-star">
+                <use xlink:href="img/sprite.svg#icon-star" />
+              </svg>
+              <svg class="overview__icon-star">
+                <use xlink:href="img/sprite.svg#icon-star" />
+              </svg>
+              <svg class="overview__icon-star">
+                <use xlink:href="img/sprite.svg#icon-star" />
+              </svg>
+              <svg class="overview__icon-star">
+                <use xlink:href="img/sprite.svg#icon-star" />
+              </svg>
+              <svg class="overview__icon-star">
+                <use xlink:href="img/sprite.svg#icon-star" />
+              </svg>
+
+            </div>
+            <div class="overview__location">
+              <svg class="overview__icon-location">
+                <use xlink:href="img/sprite.svg#icon-location-pin" />
+              </svg>
+              <button class="btn-inline">Gran Canaria, Portugal</button>
+            </div>
+
+            <div class="overview__rating-average">8.6</div>
+            <div class="overview__rating-count">429 votes</div>
+          </div>
+        </main>
       </div>
     </div>
   </body>

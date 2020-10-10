@@ -70,12 +70,15 @@ body {
 
 .content {
   display: flex;
-  height: 43rem; }
+  min-height: 43rem; }
 
 .sidebar {
   background-color: var(--grey-dark-1);
   color: var(--grey-light-1);
-  flex: 0 0 18%; }
+  flex: 0 0 18%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
 
 .hotel-view {
   background-color: var(--grey-light-1);
@@ -148,7 +151,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
+    font-weight: 900;
     height: 1.75rem;
     width: 1.75rem;
     border-radius: 50%;
@@ -166,3 +170,77 @@ body {
     font-weight: 600; }
   .user-nav__user:hover {
     color: var(--grey-dark-1); }
+
+.side-nav {
+  padding-top: 2rem; }
+  .side-nav__item {
+    padding: 1rem 2rem;
+    list-style: none;
+    position: relative; }
+    .side-nav__item:not(:last-child) {
+      margin-bottom: 0.5rem; }
+    .side-nav__item:hover {
+      color: var(--grey-light-4); }
+  .side-nav__item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 3px;
+    background-color: var(--primary);
+    transform: scaleY(0);
+    transition: transform 0.1s, width 0.5s cubic-bezier(1, 0, 0, 1) 0.1s, background-color 0.1; }
+  .side-nav__item:hover::before {
+    transform: scaleY(1);
+    width: 100%; }
+  .side-nav__item:active::before {
+    background-color: var(--primary-light); }
+  .side-nav__link:link, .side-nav__link:visited {
+    text-decoration: none;
+    color: var(--grey-light-4);
+    display: block;
+    padding: 1.5rem 3rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 10; }
+    .side-nav__link:link span, .side-nav__link:visited span {
+      text-transform: uppercase; }
+  .side-nav__icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: currentColor;
+    margin-right: 2rem; }
+
+.legal {
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 2.5rem;
+  color: var(--grey-light-4); }
+  .legal a {
+    text-decoration: none;
+    color: var(--primary); }
+
+.gallery {
+  display: flex;
+  justify-content: center; }
+  .gallery__photo {
+    width: 100%;
+    display: block; }
+
+.overview {
+  display: flex;
+  align-items: center; }
+  .overview__heading {
+    text-transform: capitalize;
+    font-size: 3rem;
+    margin-right: 2rem; }
+  .overview__stars {
+    margin-right: auto; }
+  .overview__icon-star, .overview__icon-location {
+    fill: var(--primary);
+    width: 1.75rem;
+    height: 1.75rem; }

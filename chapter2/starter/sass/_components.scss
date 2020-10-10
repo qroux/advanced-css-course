@@ -98,7 +98,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
+    font-weight: 900;
     height: 1.75rem;
     width: 1.75rem;
     border-radius: 50%;
@@ -122,4 +123,131 @@
   &__user:hover {
     color: var(--grey-dark-1);
   }
+}
+
+// SIDENAV ///////////////////////////////////////
+
+.side-nav {
+  padding-top: 2rem;
+
+  &__item {
+    padding: 1rem 2rem;
+    list-style: none;
+    position: relative;
+
+    &:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
+
+    &:hover {
+      color: var(--grey-light-4);
+    }
+  }
+
+  &__item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 3px;
+    background-color: var(--primary);
+    transform: scaleY(0);
+    transition: transform 0.1s, width 0.5s cubic-bezier(1, 0, 0, 1) 0.1s,
+      background-color 0.1;
+  }
+  &__item:hover::before {
+    transform: scaleY(1);
+    width: 100%;
+  }
+  &__item:active::before {
+    background-color: var(--primary-light);
+  }
+
+  &__link:link,
+  &__link:visited {
+    text-decoration: none;
+    color: var(--grey-light-4);
+    display: block;
+    padding: 1.5rem 3rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+
+    span {
+      text-transform: uppercase;
+    }
+  }
+  // &__link:hover {
+  //   color: var(--primary);
+  // }
+
+  &__icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: currentColor;
+    margin-right: 2rem;
+  }
+}
+
+.legal {
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 2.5rem;
+  color: var(--grey-light-4);
+
+  a {
+    text-decoration: none;
+    color: var(--primary);
+  }
+}
+
+// GALLERY ////////////////////////////////////////////
+
+.gallery {
+  display: flex;
+  justify-content: center;
+
+  &__photo {
+    width: 100%;
+    display: block;
+  }
+}
+
+// OVERVIEW ////////////////////////////////////////
+.overview {
+  display: flex;
+  align-items: center;
+
+  &__heading {
+    text-transform: capitalize;
+    font-size: 3rem;
+    margin-right: 2rem;
+  }
+  &__stars {
+    margin-right: auto;
+  }
+  &__icon-star,
+  &__icon-location {
+    fill: var(--primary);
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+
+  &__location {
+  }
+
+  &__rating {
+  }
+  &__rating-average {
+  }
+  &__rating-count {
+  }
+}
+
+.btn-inline {
 }
