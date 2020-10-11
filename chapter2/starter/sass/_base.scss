@@ -17,6 +17,8 @@ Grey dark 3: #999
 */
 
 :root {
+  --default-size: 1.4rem;
+
   --primary: #eb2f64;
   --primary-light: #ff3366;
   --primary-dark: #ba265d;
@@ -33,7 +35,7 @@ Grey dark 3: #999
   --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
   --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
 
-  --line: 1px solid var(--color-grey-light-2);
+  --line: 1px solid var(--grey-light-2);
 }
 
 * {
