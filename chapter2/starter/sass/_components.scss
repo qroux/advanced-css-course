@@ -56,6 +56,12 @@
   &__input:focus + &__button > &__icon {
     fill: var(--grey-dark-1);
   }
+
+  @media only screen and (max-width: $bp-smallest) {
+    order: 1;
+    flex: 0 0 93%;
+    margin-left: 2rem;
+  }
 }
 
 ///////////////////////////////////////////////////////
@@ -137,10 +143,21 @@
 
     &:not(:last-child) {
       margin-bottom: 0.5rem;
+
+      @media only screen and (max-width: $bp-medium) {
+        margin-bottom: 0;
+      }
     }
 
     &:hover {
       color: var(--grey-light-4);
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+      height: 100%;
+      flex: 1;
+      display: flex;
+      justify-content: center;
     }
   }
 
@@ -182,16 +199,33 @@
     span {
       text-transform: uppercase;
     }
+
+    @media only screen and (max-width: $bp-small) {
+      flex-direction: column;
+      justify-content: center;
+      padding: 0.5rem 2rem;
+    }
   }
-  // &__link:hover {
-  //   color: var(--primary);
-  // }
 
   &__icon {
     width: 1.75rem;
     height: 1.75rem;
     fill: currentColor;
     margin-right: 2rem;
+
+    @media only screen and (max-width: $bp-small) {
+      margin-right: 0;
+      margin-bottom: 0.5rem;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0;
   }
 }
 
@@ -204,6 +238,10 @@
   a {
     text-decoration: none;
     color: var(--primary);
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    display: none;
   }
 }
 
@@ -231,17 +269,34 @@
     font-weight: 600;
     letter-spacing: 1px;
     padding: 1.5rem 3rem;
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 1.8rem;
+      padding: 1.25rem 2rem;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+      font-size: 1rem;
+      padding: 1.25rem 1rem;
+    }
   }
   &__stars {
     margin-right: auto;
-    // display: flex;
-    // align-items: center;
   }
   &__icon-star,
   &__icon-location {
     fill: var(--primary);
     width: 1.75rem;
     height: 1.75rem;
+
+    @media only screen and (max-width: $bp-small) {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+    @media only screen and (max-width: $bp-smallest) {
+      width: 0.8rem;
+      height: 0.8rem;
+    }
   }
   &__icon-location {
     margin-right: 1rem;
@@ -263,14 +318,26 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    @media only screen and (max-width: $bp-small) {
+      padding: 0 1.5rem;
+    }
   }
   &__rating-average {
     font-size: 2.5rem;
     font-weight: 600;
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 1.8rem;
+    }
   }
   &__rating-count {
     font-size: 1rem;
     text-transform: uppercase;
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 0.9rem;
+    }
   }
 }
 
@@ -305,6 +372,10 @@
   &:focus {
     outline: none;
     animation: pulsate 2s infinite;
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
+    font-size: 1.2rem;
   }
 }
 
@@ -365,6 +436,7 @@
   }
 
   &__friends {
+    display: flex;
   }
 
   &__photo {
@@ -375,7 +447,7 @@
     box-sizing: content-box;
 
     &:not(:last-of-type) {
-      margin-right: -1.5rem;
+      margin-right: -2rem;
     }
   }
 }
@@ -388,6 +460,15 @@
   position: relative;
   overflow: hidden;
   margin-bottom: 3.5rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    flex: 0.5;
+  }
 
   &::before,
   &::after {
@@ -444,5 +525,87 @@
     margin-left: auto;
     z-index: 10;
     position: relative;
+  }
+}
+
+// CTA /////////////////////////////////////////
+
+.cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3.5rem 0;
+  text-align: center;
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 3.5rem 1.5rem;
+  }
+
+  &__heading {
+    font-size: 2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 3rem;
+
+    @media only screen and (max-width: $bp-medium) {
+      margin-bottom: 2rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__btn {
+    margin: 0;
+    background-image: linear-gradient(
+      to right,
+      var(--primary-light),
+      var(--primary-dark)
+    );
+    color: var(--grey-light-2);
+    font-size: 2rem;
+    text-transform: uppercase;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+
+    &:focus {
+      outline: none;
+      animation: pulsate 1s infinite;
+    }
+
+    &-visible {
+      display: inline-block;
+      padding: 2rem 7.5rem;
+      transition: transform 0.5s;
+    }
+
+    &-invisible {
+      display: inline-block;
+      position: absolute;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 2rem 0;
+      transition: transform 0.5s;
+    }
+
+    &:hover {
+      background-image: linear-gradient(
+        to right,
+        var(--primary-dark),
+        var(--primary-light)
+      );
+    }
+
+    &:hover &-visible,
+    &:hover &-invisible {
+      transform: translateY(100%);
+    }
   }
 }

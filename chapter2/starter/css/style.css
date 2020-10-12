@@ -43,6 +43,9 @@ Grey dark 3: #999
 html {
   box-sizing: border-box;
   font-size: 62.5%; }
+  @media only screen and (max-width: 68.75em) {
+    html {
+      font-size: 50%; } }
 
 body {
   min-height: 100vh;
@@ -58,8 +61,12 @@ body {
   background-color: var(--grey-light-1);
   max-width: 120rem;
   margin: 8rem auto;
-  box-shadow: var(--shadow-dark);
-  min-height: 50rem; }
+  box-shadow: var(--shadow-dark); }
+  @media only screen and (max-width: 75em) {
+    .container {
+      margin: auto;
+      max-width: 100%;
+      width: 100%; } }
 
 .header {
   font-size: 1.4rem;
@@ -69,10 +76,17 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center; }
+  @media only screen and (max-width: 31.25em) {
+    .header {
+      flex-wrap: wrap;
+      height: 11rem;
+      align-content: space-around; } }
 
 .content {
-  display: flex;
-  min-height: 43rem; }
+  display: flex; }
+  @media only screen and (max-width: 56.25em) {
+    .content {
+      flex-direction: column; } }
 
 .sidebar {
   background-color: var(--grey-dark-1);
@@ -93,19 +107,36 @@ body {
   background-color: var(--grey-light-2);
   border-bottom: var(--line);
   font-size: var(--default-size); }
+  @media only screen and (max-width: 56.25em) {
+    .detail {
+      padding: 3rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .detail {
+      flex-direction: column; } }
 
 .description {
-  background-color: var(--grey-light-1);
+  background-color: white;
   box-shadow: var(--shadow-light);
   padding: 3rem;
   flex: 0 0 60%;
   margin-right: 4.5rem; }
+  @media only screen and (max-width: 56.25em) {
+    .description {
+      padding: 2rem;
+      margin-right: 3rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .description {
+      padding: 2rem;
+      margin-right: 0;
+      margin-bottom: 3rem; } }
 
 .user-reviews {
   flex: 1;
   display: flex;
-  flex-direction: column;
-  align-items: center; }
+  flex-direction: column; }
+  @media only screen and (max-width: 37.5em) {
+    .user-reviews {
+      display: block; } }
 
 .logo {
   height: 3.25rem;
@@ -146,6 +177,11 @@ body {
     transition: 0.5s; }
   .search__input:focus + .search__button > .search__icon {
     fill: var(--grey-dark-1); }
+  @media only screen and (max-width: 31.25em) {
+    .search {
+      order: 1;
+      flex: 0 0 93%;
+      margin-left: 2rem; } }
 
 .user-nav {
   display: flex;
@@ -202,8 +238,17 @@ body {
     position: relative; }
     .side-nav__item:not(:last-child) {
       margin-bottom: 0.5rem; }
+      @media only screen and (max-width: 56.25em) {
+        .side-nav__item:not(:last-child) {
+          margin-bottom: 0; } }
     .side-nav__item:hover {
       color: var(--grey-light-4); }
+    @media only screen and (max-width: 56.25em) {
+      .side-nav__item {
+        height: 100%;
+        flex: 1;
+        display: flex;
+        justify-content: center; } }
   .side-nav__item::before {
     content: "";
     position: absolute;
@@ -232,11 +277,28 @@ body {
     z-index: 10; }
     .side-nav__link:link span, .side-nav__link:visited span {
       text-transform: uppercase; }
+    @media only screen and (max-width: 37.5em) {
+      .side-nav__link:link, .side-nav__link:visited {
+        flex-direction: column;
+        justify-content: center;
+        padding: 0.5rem 2rem; } }
   .side-nav__icon {
     width: 1.75rem;
     height: 1.75rem;
     fill: currentColor;
     margin-right: 2rem; }
+    @media only screen and (max-width: 37.5em) {
+      .side-nav__icon {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+        width: 1.5rem;
+        height: 1.5rem; } }
+  @media only screen and (max-width: 56.25em) {
+    .side-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 0; } }
 
 .legal {
   font-size: 1.2rem;
@@ -246,6 +308,9 @@ body {
   .legal a {
     text-decoration: none;
     color: var(--primary); }
+  @media only screen and (max-width: 56.25em) {
+    .legal {
+      display: none; } }
 
 .gallery {
   display: flex;
@@ -264,12 +329,28 @@ body {
     font-weight: 600;
     letter-spacing: 1px;
     padding: 1.5rem 3rem; }
+    @media only screen and (max-width: 37.5em) {
+      .overview__heading {
+        font-size: 1.8rem;
+        padding: 1.25rem 2rem; } }
+    @media only screen and (max-width: 31.25em) {
+      .overview__heading {
+        font-size: 1rem;
+        padding: 1.25rem 1rem; } }
   .overview__stars {
     margin-right: auto; }
   .overview__icon-star, .overview__icon-location {
     fill: var(--primary);
     width: 1.75rem;
     height: 1.75rem; }
+    @media only screen and (max-width: 37.5em) {
+      .overview__icon-star, .overview__icon-location {
+        width: 1.25rem;
+        height: 1.25rem; } }
+    @media only screen and (max-width: 31.25em) {
+      .overview__icon-star, .overview__icon-location {
+        width: 0.8rem;
+        height: 0.8rem; } }
   .overview__icon-location {
     margin-right: 1rem; }
   .overview__location {
@@ -285,12 +366,21 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center; }
+    @media only screen and (max-width: 37.5em) {
+      .overview__rating {
+        padding: 0 1.5rem; } }
   .overview__rating-average {
     font-size: 2.5rem;
     font-weight: 600; }
+    @media only screen and (max-width: 37.5em) {
+      .overview__rating-average {
+        font-size: 1.8rem; } }
   .overview__rating-count {
     font-size: 1rem;
     text-transform: uppercase; }
+    @media only screen and (max-width: 37.5em) {
+      .overview__rating-count {
+        font-size: 0.9rem; } }
 
 .btn-inline {
   border: none;
@@ -313,6 +403,9 @@ body {
   .btn-inline:focus {
     outline: none;
     animation: pulsate 2s infinite; }
+  @media only screen and (max-width: 31.25em) {
+    .btn-inline {
+      font-size: 1.2rem; } }
 
 .paragraph:not(:last-of-type) {
   margin-bottom: 2rem; }
@@ -349,6 +442,8 @@ body {
   align-items: center; }
   .recommend__count {
     margin-right: auto; }
+  .recommend__friends {
+    display: flex; }
   .recommend__photo {
     height: 4rem;
     width: 4rem;
@@ -356,7 +451,7 @@ body {
     border-radius: 100%;
     box-sizing: content-box; }
     .recommend__photo:not(:last-of-type) {
-      margin-right: -1.5rem; }
+      margin-right: -2rem; }
 
 .review {
   background-color: white;
@@ -365,6 +460,13 @@ body {
   position: relative;
   overflow: hidden;
   margin-bottom: 3.5rem; }
+  @media only screen and (max-width: 56.25em) {
+    .review {
+      padding: 2rem;
+      margin-bottom: 3rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .review {
+      flex: 0.5; } }
   .review::before, .review::after {
     content: "\201C";
     position: absolute;
@@ -402,6 +504,60 @@ body {
     margin-left: auto;
     z-index: 10;
     position: relative; }
+
+.cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3.5rem 0;
+  text-align: center; }
+  @media only screen and (max-width: 56.25em) {
+    .cta {
+      padding: 3.5rem 1.5rem; } }
+  .cta__heading {
+    font-size: 2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 3rem; }
+    @media only screen and (max-width: 56.25em) {
+      .cta__heading {
+        margin-bottom: 2rem; } }
+    @media only screen and (max-width: 37.5em) {
+      .cta__heading {
+        font-size: 1.5rem; } }
+  .cta__btn {
+    margin: 0;
+    background-image: linear-gradient(to right, var(--primary-light), var(--primary-dark));
+    color: var(--grey-light-2);
+    font-size: 2rem;
+    text-transform: uppercase;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden; }
+    .cta__btn:focus {
+      outline: none;
+      animation: pulsate 1s infinite; }
+    .cta__btn-visible {
+      display: inline-block;
+      padding: 2rem 7.5rem;
+      transition: transform 0.5s; }
+    .cta__btn-invisible {
+      display: inline-block;
+      position: absolute;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 2rem 0;
+      transition: transform 0.5s; }
+    .cta__btn:hover {
+      background-image: linear-gradient(to right, var(--primary-dark), var(--primary-light)); }
+    .cta__btn:hover .cta__btn-visible,
+    .cta__btn:hover .cta__btn-invisible {
+      transform: translateY(100%); }
 
 @keyframes pulsate {
   0% {
